@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="400" height="400" style="border: 2px solid #000000;">
+
+
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+for (let i = 50; i < 400; i += 50) {
+    ctx.moveTo(i, 0);
+    ctx.lineTo(i, 400);
+    ctx.moveTo(0, i);
+    ctx.lineTo(400, i);
+}
+
+
+ctx.stroke();
+
+
+</script>
+
+</body>
+</html>
