@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#calculator {
+  background-color: #000;
+  border-radius: 40px;
+  max-width: 375px;
+  overflow: hidden;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#display {
+  width: 100%;
+  padding: 30px 20px;
+  font-size: 4rem;
+  text-align: right;
+  border: none;
+  background-color: #000000;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 10px;
+}
+
+button {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: filter 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  filter: brightness(130%);
+}
+
+button:active {
+  filter: brightness(150%);
+}
+
+/* ปุ่มตัวเลข */
+button:not(.operator-btn):not(.function-btn):not(.zero-btn) {
+  background-color: #333;
+}
+
+/* ปุ่มฟังก์ชัน (C, ±, %) */
+.function-btn {
+  background-color: #a5a5a5;
+  color: #000;
+}
+
+/* ปุ่มตัวดำเนินการ (+, -, ×, ÷, =) */
+.operator-btn {
+  background-color: #f1a33c;
+  color: white;
+  font-size: 2rem;
+}
+
+/* ปุ่ม 0 ที่มีขนาดใหญ่กว่า */
+.zero-btn {
+  grid-column: span 2;
+  width: 100%;
+  border-radius: 37.5px;
+  justify-content: flex-start;
+  padding-left: 30px;
+}
+
+/* สำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 400px) {
+  #calculator {
+    max-width: 100%;
+    border-radius: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  button {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .zero-btn {
+    border-radius: 35px;
+  }
+}
